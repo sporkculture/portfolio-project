@@ -5,3 +5,9 @@ class Blog(models.Model):
 	publish_date = models.DateField( auto_now_add=True)
 	body = models.TextField()
 	image = models.ImageField(upload_to='images/')
+
+	def __str__(self):
+		return self.title
+
+	def summary(self):
+		return self.body[:140]
